@@ -1,0 +1,17 @@
+Comandos (paso a paso)
+
+Abrir CMD y situarse en la carpeta del proyecto cd /d C:\Users\Usuario\Downloads\TF-TCC
+
+Comprobar Java/Javac java -version javac -version
+
+Comprobar que jade.jar exista dir lib\jade.jar
+
+(Opcional) Limpiar compilaciones previas rmdir /s /q bin
+
+Crear carpeta bin mkdir bin
+
+Compilar todo el paquete (una sola llamada — importante) javac -cp lib\jade.jar -d bin src\swarmintelligence\*.java
+
+Verificar que se generaron las .class dir bin\swarmintelligence
+
+Ejecutar JADE con 5 vehículos y GUI del simulador java -cp "bin;lib\jade.jar" jade.Boot -gui -agents gui:swarmintelligence.GuiAgent;visualizer:swarmintelligence.VisualiserAgent;broker:swarmintelligence.BrokerAgent;v1:swarmintelligence.VehicleAgent;v2:swarmintelligence.VehicleAgent;v3:swarmintelligence.VehicleAgent;v4:swarmintelligence.VehicleAgent;v5:swarmintelligence.VehicleAgent
