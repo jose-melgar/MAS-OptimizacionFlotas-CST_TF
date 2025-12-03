@@ -22,8 +22,8 @@ public class GuiAgent extends Agent {
             e.printStackTrace();
         }
 
-        // Ticker para repintar el panel cada 100 ms
-        addBehaviour(new TickerBehaviour(this, 100) {
+        // Ticker para repintar el panel cada 16 ms (~60 FPS) para animaciones fluidas
+        addBehaviour(new TickerBehaviour(this, 16) {
             @Override
             protected void onTick() {
                 if (MainFrame.panel_principal != null) {
