@@ -6,16 +6,18 @@ import java.awt.Dimension;
 import java.awt.GraphicsConfiguration;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 /**
- * MainFrame simplificado: ya no depende de HostAgent.
- * Crea y muestra el AmbientePanel.
+ * MainFrame con diseño moderno y profesional
  */
 public class MainFrame extends JFrame {
     public static AmbientePanel panel_principal;
 
     public MainFrame() {
         try {
+            // Establecer look and feel del sistema
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             inicializar();
         } catch (Exception e) {
             System.err.println("exception " + e);
@@ -24,6 +26,8 @@ public class MainFrame extends JFrame {
     }
 
     public void inicializar() {
+        setTitle("Sistema Multiagente - Optimización de Flotas | JADE Framework");
+        
         // maximizar el frame
         final GraphicsConfiguration config = getGraphicsConfiguration();
         final int left = Toolkit.getDefaultToolkit().getScreenInsets(config).left;
@@ -33,15 +37,15 @@ public class MainFrame extends JFrame {
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         final int width = screenSize.width - left - right;
         final int height = screenSize.height - top - bottom;
-        setResizable(false);
+        setResizable(true);
         setSize(width, height);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new BorderLayout());
-        setBackground(Color.BLUE);
+        setBackground(new Color(18, 18, 24));
 
         panel_principal = new AmbientePanel();
-        panel_principal.setBackground(Color.BLUE);
+        panel_principal.setBackground(new Color(18, 18, 24));
 
         add(panel_principal, BorderLayout.CENTER);
     }

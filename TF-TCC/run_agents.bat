@@ -58,23 +58,26 @@ IF ERRORLEVEL 1 (
 echo Compilacion exitosa.
 
 REM --- Construir cadena de agentes ---
-SET AGENTS=visualizer:%PKG%.VisualiserAgent;broker:%PKG%.BrokerAgent
+SET AGENTS=visualizer:%PKG%.VisualiserAgent
 
 IF /I "%WANT_GUI%"=="gui" (
   SET AGENTS=%AGENTS%;gui:%PKG%.GuiAgent
 )
 
-REM Añadir N VehicleAgent
+REM Anadir N VehicleAgent
 FOR /L %%i IN (1,1,%NUM_VEHICLES%) DO (
   SET AGENTS=!AGENTS!;v%%i:%PKG%.VehicleAgent
 )
+
+REM Anadir UN ClientAgent (generador de ordenes)
+SET AGENTS=!AGENTS!;orderCenter:%PKG%.ClientAgent
 
 echo.
 echo Iniciando JADE con agentes:
 echo   %AGENTS%
 echo.
 
-REM --- Ejecutar JADE (abrirá RMA con -gui) ---
+REM --- Ejecutar JADE (abrira RMA con -gui) ---
 java -cp "%BIN_DIR%;%JADE_JAR%" jade.Boot -gui -agents %AGENTS%
 
 echo JADE finalizo o se cerro. Presiona una tecla para salir.
