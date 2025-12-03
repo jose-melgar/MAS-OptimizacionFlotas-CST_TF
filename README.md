@@ -38,7 +38,4 @@ Se recomienda usar el *script* de lotes `run_agents.bat` (o `run_agents.sh`) par
 
 ## 3. Declaración de Uso de IA
 
-Se declara formalmente el uso de herramientas de **Inteligencia Artificial (IA)** para la generación inicial y la depuración del código base de los agentes `BrokerAgent.java` y `VehicleAgent.java`.
-
-* **Servicio utilizado**: Gemini/Copilot.
-* **Prompts empleados**: Se detallan y documentan en la sección correspondiente del informe final adjunto.
+Se declara formalmente el uso de herramientas de **Inteligencia Artificial (IA)** para la generación inicial y la depuración del código base de los agentes `BrokerAgent.java` y `VehicleAgent.java`, así como su posterior corrección durante la aparición de errores.
