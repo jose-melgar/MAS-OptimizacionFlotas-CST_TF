@@ -583,9 +583,3 @@ java -cp lib\jade.jar jade.Boot -version
 ```
 
 ---
-
-**Elaborado por:** [Tu Nombre]  
-**Curso:** Tópicos en Ciencias de la Computación  
-**Institución:** Universidad Peruana de Ciencias Aplicadas (UPC)  
-**Fecha:** Diciembre 2025  
-**Versión:** 1.0
